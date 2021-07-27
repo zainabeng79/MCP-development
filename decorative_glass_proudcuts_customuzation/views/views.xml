@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="matrial_group_tree" model="ir.ui.view">
+        <field name="name">matrial.group.tree</field>
+        <field name="model">matrial.group</field>
+        <field name="arch" type="xml">
+            <tree string="Matrial Group" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="matrial_type_tree1" model="ir.ui.view">
+        <field name="name">matrial.type.tree</field>
+        <field name="model">matrial.type</field>
+        <field name="arch" type="xml">
+            <tree string="Matrial Type" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="matrial_group_action" model="ir.actions.act_window">
+        <field name="name">matrial.group</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">matrial.group</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="matrial_type_action" model="ir.actions.act_window">
+        <field name="name">matrial.type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">matrial.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="matrial_group_menuitem" name="Matrial"
+              parent="stock.menu_stock_config_settings" sequence="2"
+    />
+    <menuitem id="matrial_group_menuitem1" name="Matrial Groups"
+              parent="matrial_group_menuitem" sequence="1"
+              action="matrial_group_action"/>
+    <menuitem id="matrial_type_menuitem" name="Matrial Types"
+              parent="matrial_group_menuitem" sequence="2"
+              action="matrial_type_action"/>
+</odoo>

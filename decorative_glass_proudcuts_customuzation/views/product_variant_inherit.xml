@@ -1,0 +1,22 @@
+<odoo>
+    <!-- Inherit Form View to Modify it -->
+    <record id="product_normal_inherit1" model="ir.ui.view">
+        <field name="name">Product Variant Inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="matrial_types"/>
+                <field name="matrial_groups"/>
+            </xpath>
+            <xpath   expr="//sheet/notebook/page[@name='inventory']/group[@name='inventory']/group[@name='group_lots_and_weight']" position="after">
+                <group string="Product Specs" name="product_specs">
+                        <field name="thicknes"/>
+                        <field name="wid" force_save="1"/>
+                        <field name="hei"/>
+                        <field name="max_aspect_rati"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_decorative_glass_proudcuts,decorative_glass.decorative_glass,model_matrial_type,base.group_user,1,1,1,1
+access_decorative_proudcuts,decorative_glass1.decorative_glass1,model_matrial_group,base.group_user,1,1,1,1
